@@ -3,10 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="aburbanotll3.Views.Vista1"
              Title="Vista1">
-    <VerticalStackLayout>
-        <Label 
-            Text=""
+    <VerticalStackLayout
+        Spacing="15"
+        Padding="15">
+
+        <!--<Image Source="https://redi.cedia.edu.ec/members/UISRAEL.png"
+               HeightRequest="100"/>-->
+
+        <!--<Label 
+            Text="Calculo aporte al IESS"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="Title"/>
+        --><!--Padding="0,0,0,20"/>--><!--
+
+        <Label 
+         Text="Ingrese sus datos"
+         VerticalOptions="Center" 
+         HorizontalOptions="Center"
+         FontSize="Small"/>
+        --><!--Padding="0,0,0,15"-->
+        
+        
+
+        <Picker  x:Name="pkIdentidad" Title="Seleccione una opcion">
+                <Picker.Items>
+                    <x:String >CI</x:String>
+                    <x:String >RUC</x:String>
+                    <x:String >Pasaporte</x:String>
+                </Picker.Items>
+            </Picker>
+
+        <Entry x:Name="txtIdentidad" Placeholder="Ingrese su indentificación" Keyboard="Numeric"/>
+
+        <Label x:Name="lblIdentidad" TextColor="#D7263D"/>
+
+        <Entry x:Name="txtNombres" Placeholder="Ingrese sus nombres"/>
+
+        <Entry x:Name="txtApellidos" Placeholder="Ingrese sus apellidos"/>
+
+        <Label x:Name="lblLetras" TextColor="#D7263D"/>
+
+        <!--<DatePicker x:Name="dpFecha"/>-->
+
+        <Entry x:Name="txtCorreo" Placeholder="Ingrese su correo" Keyboard="Email"/>
+
+        <Entry x:Name="txtCorreoConf" Placeholder="Confirme su correo" Keyboard="Email"/>
+
+
+        <Label x:Name="lblCorreos" TextColor="#D7263D"/>
+
+        <Entry x:Name="txtSalario" Placeholder="Ingrese su salario" Keyboard="Numeric"/>
+
+        <Label x:Name="lblSalario" TextColor="#D7263D"/>
+
+        <Button x:Name="btnCalcular"
+                CornerRadius="20"
+                Clicked="btnCalcular_Clicked"
+                Text="Calcular"
+                TextColor="White"
+                BackgroundColor="#D7263D"/>
+
     </VerticalStackLayout>
 </ContentPage>
