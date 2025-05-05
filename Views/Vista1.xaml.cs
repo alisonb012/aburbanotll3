@@ -19,9 +19,9 @@ public partial class Vista1 : ContentPage
 		string correo = txtCorreo.Text;
 		string correoconf = txtCorreoConf.Text;
 		string salario = txtSalario.Text;
+        DateTime fecha = dpFecha.Date;
 
-
-            if (string.IsNullOrEmpty(identificacion) || string.IsNullOrEmpty(nombres) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(correo)
+        if (string.IsNullOrEmpty(identificacion) || string.IsNullOrEmpty(nombres) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(correo)
                 || string.IsNullOrEmpty(correoconf) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(identificaciont))
             {
                   await DisplayAlert("Error", " Complete todos los campos", "OK");
@@ -30,23 +30,24 @@ public partial class Vista1 : ContentPage
 
             if (pkIdentidad.SelectedIndex == 0)
             {
-                if (!Regex.IsMatch(identificaciont, @"^\d{10}$"))
+                if (!Regex.IsMatch(identificaciont, @"^\d{10}$") || Regex.IsMatch(identificaciont, @"\D"))
                 {
-                    lblIdentidad.Text = "La cedula debe tener exactamente 10 dígitos";
+                    lblIdentidad.Text = "La cedula debe tener exactamente 10 dígitos y no se permiten letras";
 
                 }
             }
             else if (pkIdentidad.SelectedIndex == 1)
             {
-                if (!Regex.IsMatch(identificaciont, @"^\d{13}$"))
+                if (!Regex.IsMatch(identificaciont, @"^\d{13}$") || Regex.IsMatch(identificaciont, @"\D"))
                 {
-                    lblIdentidad.Text = "El RUC debe tener exactamente 13 dígitos";
+                    lblIdentidad.Text = "El RUC debe tener exactamente 13 dígitos y no se permiten letras";
 
                 }
+  
 
             }
             else if (pkIdentidad.SelectedIndex == 2)
-            {
+             {
                 if (identificaciont == null)
                 {
                     lblIdentidad.Text = "Por favor ingrese el pasaporte";
@@ -57,6 +58,7 @@ public partial class Vista1 : ContentPage
                 lblIdentidad.Text = "Por favor elija una opcion";
 
             }
+
 
             if (!Regex.IsMatch(nombres ?? "", @"[a-zA-Z]\s") || !Regex.IsMatch(apellidos ?? "", @"[a-zA-Z]\s"))
             {
@@ -75,7 +77,7 @@ public partial class Vista1 : ContentPage
                 return;
             }
 
-        await Navigation.PushAsync( new Vista2(nombres, apellidos,  correo, salarios));
+        await Navigation.PushAsync( new Vista2(nombres, apellidos,fecha ,correo, salarios));
 
     }
 

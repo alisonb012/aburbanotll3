@@ -3,25 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="aburbanotll3.Views.Vista2"
              Title="Vista2">
+    <!--Estilos explícitos-->
+    <ContentPage.Resources>
+        <Style x:Key="estiloTexto" TargetType="Label">
+            <Setter Property="TextColor" Value="#D7263D"/>
+            <Setter Property="FontSize" Value="Body"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        <Style x:Key="estiloBoton" TargetType="Button">
+            <Setter Property="Background" Value="#D7263D"/>
+            <Setter Property="TextColor" Value="White"/>
+
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout Padding="20" Spacing="10">
         <Label 
             Text="Visualización de datos y cálculo IESS "
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             FontSize="Title"
-            Margin=" 0,0,0,40"/>
+            Margin=" 0,0,0,40"
+            TextColor="#001514"/>
 
-        <Image Source="iees.png" HeightRequest="100"/>
+        <Image Source="iees.png" HeightRequest="200"/>
 
-        <Label x:Name="lblIdentificacion" TextColor="#D7263D" FontSize="Body"/>
-        <Label x:Name="lblNombres" TextColor="#D7263D" FontSize="Body"/>
-        <Label x:Name="lblApellidos" TextColor="#D7263D" FontSize="Body"/>
-        <Label x:Name="lblCorreo" TextColor="#D7263D" FontSize="Body"/>
-        <Label x:Name="lblSalario" TextColor="#D7263D" FontSize="Body"/>
-        <Label x:Name="lblAporte" TextColor="#D7263D" FontSize="Body"/>
+        <Label x:Name="lblIdentificacion" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblNombres" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblApellidos" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblCorreo" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblSalario" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblAporte" Style="{StaticResource estiloTexto}"/>
+        <Label x:Name="lblFecha" Style="{StaticResource estiloTexto}"/>
 
 
-        <Button Margin="60,40,60,40" x:Name="btnExportar" Text="Exportar a .txt" TextColor="White" BackgroundColor="#D7263D" Clicked="btnExportar_Clicked"/>
+        <Button Margin="60,40,60,40" x:Name="btnExportar" Text="Exportar a .txt" Clicked="btnExportar_Clicked" Style="{StaticResource estiloBoton}"/>
         
     </VerticalStackLayout>
 </ContentPage>

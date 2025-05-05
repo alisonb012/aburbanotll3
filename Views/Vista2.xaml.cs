@@ -4,12 +4,13 @@ namespace aburbanotll3.Views;
 
 public partial class Vista2 : ContentPage
 {
-	public Vista2(string nombres, string apellidos, string correo, double salario)
+	public Vista2(string nombres, string apellidos,DateTime fecha, string correo, double salario)
 	{
 		InitializeComponent();
 
         lblNombres.Text = nombres;
         lblApellidos.Text = apellidos;
+        lblFecha.Text = fecha.ToString();
         lblCorreo.Text = correo;
         lblSalario.Text = "Su salario es: $" + salario;
         double aporte = salario * 0.0945;
@@ -21,6 +22,7 @@ public partial class Vista2 : ContentPage
 
         string contenido = $"Nombres: {lblNombres.Text}\n" +
                                $"Apellidos: {lblApellidos.Text}\n" +
+                               $"Fecha: {lblFecha.Text}\n" +
                                $"Correo: {lblCorreo.Text}\n" +
                                $"{lblSalario.Text}\n" +
                                $"{lblAporte.Text}";

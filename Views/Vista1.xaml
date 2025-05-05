@@ -3,26 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="aburbanotll3.Views.Vista1"
              Title="Vista1">
+    <!--Estilos implicitos-->
+    <ContentPage.Resources>
+        <Style TargetType ="Label">
+             <Setter Property="TextColor" Value="#D7263D"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+            <Setter Property="FontSize" Value="Small"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#D7263D"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
     <VerticalStackLayout
         Spacing="15"
         Padding="15">
 
-        <!--<Image Source="https://redi.cedia.edu.ec/members/UISRAEL.png"
-               HeightRequest="100"/>-->
+        <Image Source="https://redi.cedia.edu.ec/members/UISRAEL.png"
+               HeightRequest="100"/>
 
-        <!--<Label 
+        <Label 
             Text="Calculo aporte al IESS"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            FontSize="Title"/>
-        --><!--Padding="0,0,0,20"/>--><!--
+            FontSize="Title"
+        Padding="0,0,0,20"
+            TextColor="#001514"/>
 
         <Label 
          Text="Ingrese sus datos"
          VerticalOptions="Center" 
          HorizontalOptions="Center"
-         FontSize="Small"/>
-        --><!--Padding="0,0,0,15"-->
+         FontSize="Small"
+        Padding="0,0,0,15"
+            TextColor="#001514"/>
         
         
 
@@ -34,35 +49,36 @@
                 </Picker.Items>
             </Picker>
 
-        <Entry x:Name="txtIdentidad" Placeholder="Ingrese su indentificación" Keyboard="Numeric"/>
+        <Entry x:Name="txtIdentidad" Placeholder="Ingrese su indentificación"/>
 
-        <Label x:Name="lblIdentidad" TextColor="#D7263D"/>
+        <Label x:Name="lblIdentidad" />
 
         <Entry x:Name="txtNombres" Placeholder="Ingrese sus nombres"/>
 
         <Entry x:Name="txtApellidos" Placeholder="Ingrese sus apellidos"/>
 
-        <Label x:Name="lblLetras" TextColor="#D7263D"/>
+        <Label x:Name="lblLetras" />
 
-        <!--<DatePicker x:Name="dpFecha"/>-->
+        <DatePicker x:Name="dpFecha"/>
 
         <Entry x:Name="txtCorreo" Placeholder="Ingrese su correo" Keyboard="Email"/>
 
         <Entry x:Name="txtCorreoConf" Placeholder="Confirme su correo" Keyboard="Email"/>
 
 
-        <Label x:Name="lblCorreos" TextColor="#D7263D"/>
+        <Label x:Name="lblCorreos" />
 
         <Entry x:Name="txtSalario" Placeholder="Ingrese su salario" Keyboard="Numeric"/>
 
-        <Label x:Name="lblSalario" TextColor="#D7263D"/>
+        <Label x:Name="lblSalario"/>
 
         <Button x:Name="btnCalcular"
                 CornerRadius="20"
                 Clicked="btnCalcular_Clicked"
                 Text="Calcular"
-                TextColor="White"
-                BackgroundColor="#D7263D"/>
+               />
 
     </VerticalStackLayout>
+    </ScrollView>
+  
 </ContentPage>
