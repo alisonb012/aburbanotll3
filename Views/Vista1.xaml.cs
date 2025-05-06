@@ -60,16 +60,21 @@ public partial class Vista1 : ContentPage
             }
 
 
-            if (!Regex.IsMatch(nombres ?? "", @"[a-zA-Z]\s") || !Regex.IsMatch(apellidos ?? "", @"[a-zA-Z]\s"))
+            if (!Regex.IsMatch(nombres ?? "", @"[a-zA-Z]\s"))
+            {
+                lblLetras.Text = "Por favor ingrese solo letras";
+            }
+            else if (!Regex.IsMatch(apellidos ?? "", @"[a-zA-Z]\s"))
             {
                 lblLetras.Text = "Por favor ingrese solo letras";
             }
 
-            if (correo != correoconf)
-            {
-                lblCorreos.Text = "Los correos no coinciden";
-                return;
-            }
+
+        if (correo != correoconf)
+        {
+            lblCorreos.Text = "Los correos no coinciden";
+            return;
+        }
 
             if (!double.TryParse(salario, out double salarios) || salarios <= 0)
             {
